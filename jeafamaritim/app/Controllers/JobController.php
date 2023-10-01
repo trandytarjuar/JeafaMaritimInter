@@ -18,6 +18,8 @@ class JobController extends BaseController
     public function submit()
     {
         $request = Services::request();
+        $file = $request->getFile('file');
+        $fileName = $file->getRandomName();
         $data = [
             'nama_loker' => $request->getPost('title'),
             'nama_lengkap' => $request->getPost('name'),
@@ -28,7 +30,7 @@ class JobController extends BaseController
             'jenis_kelamin' => $request->getPost('gender'),
             'pendidikan' => $request->getPost('education'),
             'status_pernikahan' => $request->getPost('marital-status'),
-            'document' => $request->getFile('file')->getRandomName()
+            'document' => $fileName
         ];
 
         // Simpan data ke database menggunakan model
@@ -36,8 +38,6 @@ class JobController extends BaseController
         $CandidateModel->saveJob($data);
 
         // Pindahkan file yang diunggah ke folder public/uploads
-        $file = $request->getFile('file');
-        $fileName = $file->getRandomName();
         $file->move(ROOTPATH . 'public/uploads/cv', $fileName);
 
         // Redirect pengguna ke halaman yang sesuai setelah pengiriman berhasil

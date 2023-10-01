@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 30, 2023 at 07:02 PM
+-- Generation Time: Oct 01, 2023 at 02:42 AM
 -- Server version: 8.0.21
 -- PHP Version: 7.4.9
 
@@ -132,14 +132,7 @@ CREATE TABLE IF NOT EXISTS `candidate` (
   `created_at` varchar(250) DEFAULT NULL,
   `created_date` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Dumping data for table `candidate`
---
-
-INSERT INTO `candidate` (`id`, `nama_loker`, `nama_lengkap`, `tgl_lahir`, `alamat`, `email`, `no_telp`, `jenis_kelamin`, `pendidikan`, `status_pernikahan`, `document`, `created_at`, `created_date`) VALUES
-(1, 'web', 'tes', '2023-09-30', 'jalan', 'asd@gmail.com', '098765123', 'Male', 'High School', 'Single', '1696079588_4d634c606a67e76c8686.pdf', NULL, NULL);
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
